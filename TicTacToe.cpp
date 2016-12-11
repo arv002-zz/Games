@@ -19,7 +19,7 @@ void board_status()
 
    cout<<"      |       |       "<<endl;
 
-   cout<<"      |       |       "<<endl;
+   cout<<"      |       |       "<<endl<<endl;
 
 }
 int main()
