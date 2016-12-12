@@ -27,10 +27,34 @@ void board_status()
 
    cout<<"      |       |       "<<endl<<endl;
 
+
+}
+
+int Check_win()
+{
+
+    if(board[1]==board[2] && board[2]==board[3])
+        return 1;
+    else if(board[1]==board[4] && board[4]==board[7])
+        return 1;
+    else if(board[1]==board[5] && board[5]==board[9])
+        return 1;
+    else if(board[2]==board[5] && board[5]==board[8])
+        return 1;
+    else if(board[3]==board[6] && board[6]==board[9])
+        return 1;
+    else if(board[3]==board[5] && board[5]==board[7])
+        return 1;
+    else if(board[4]==board[5] && board[5]==board[6])
+        return 1;
+    else if(board[7]==board[8] && board[8]==board[9])
+        return 1;
+
+    return 0;
 }
 int main()
 {
-  int i=0,player=1,box_no;
+  int i=0,player=1,box_no,j=0;
   do
     {
       board_status();
@@ -48,6 +72,12 @@ int main()
         cout<<"Wrong No.";
 
       board_status();
+      j=Check_win();
+      if(j==1)
+        {
+          cout<<"Player "<<player<<"Won!!"<<endl;
+          return 0 ;
+        }
 
      player++;
     }
