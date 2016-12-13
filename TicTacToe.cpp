@@ -58,13 +58,15 @@ int Check_win()
 }
 int main()
 {
-  int i=0,player=1,box_no,j=0;
+  int i=0,player=1,box_no;
   do
     {
       board_status();
 
       player=player%2? 1 : 2;
+
       cout<<"Enter the no. to cross, Player "<<player<<":-"<<endl;
+
       cin>>box_no;
 
       if(player==1 && board[box_no]!='X' && board[box_no]!='O')
@@ -74,7 +76,10 @@ int main()
           board[box_no]='O';
 
       else
-        cout<<"Wrong No.";
+        {
+          cout<<"Wrong No.";
+          player--;
+        }
 
       i=Check_win();
 
@@ -84,8 +89,10 @@ int main()
 
   while(i==-1);
 
-    if(1==1)
-    cout<<"Player "<<player<<"Won!!"<<endl;
+   board_status();
+
+    if(i==1)
+    cout<<"Player "<<player<<" Won!!"<<endl;
     else cout<<"Draw";
 
     return 0;
