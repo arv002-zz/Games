@@ -81,7 +81,7 @@ int main()
 
                       else
                         {
-                          cout<<"Wrong No.";
+                          cout<<"Wrong No., Try again";
                           player--;
                         }
 
