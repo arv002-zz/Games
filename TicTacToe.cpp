@@ -49,8 +49,12 @@ int Check_win()
         return 1;
     else if(board[7]==board[8] && board[8]==board[9])
         return 1;
-
+    else if (board[1]!='1' && board[2]!='2' && board[3]!='3' &&
+          board[4]!='4' && board[5]!='5' && board[6]!='6' &&
+          board[7]!='7' && board[8]!='8' && board[9]!='9')
     return 0;
+
+    return -1;
 }
 int main()
 {
@@ -58,6 +62,7 @@ int main()
   do
     {
       board_status();
+
       player=player%2? 1 : 2;
       cout<<"Enter the no. to cross, Player "<<player<<":-"<<endl;
       cin>>box_no;
@@ -71,17 +76,18 @@ int main()
       else
         cout<<"Wrong No.";
 
-      board_status();
-      j=Check_win();
-      if(j==1)
-        {
-          cout<<"Player "<<player<<"Won!!"<<endl;
-          return 0 ;
-        }
+      i=Check_win();
+
 
      player++;
     }
+
   while(i==-1);
 
-  return 0;
+    if(1==1)
+    cout<<"Player "<<player<<"Won!!"<<endl;
+    else cout<<"Draw";
+
+    return 0;
+
 }
